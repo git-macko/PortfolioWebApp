@@ -21,16 +21,15 @@ def sign_up():
         cpassword = request.form.get('cpassword')
         
         if len(email) < 4:
-            flash('Email must contain an' + ' @ ' + 'and atleast 4 characters')
+            flash('Email must contain an' + ' @ ' + 'and atleast 4 characters', category='error')
         elif len(firstName) < 2:
-            pass
+            flash('First name must be normal 1 character', category='error')
         elif password1 != cpassword:
-            pass
+            flash('Password must match its confirmation', category='error')
         elif len(password1) < 6:
-            pass
+            flash('Password must be more than 6 characters', category='error')
         else:
-            # ADD DATABASE
-            pass
+            flash('Account Created', category='success')
             
         
     return render_template("sign_up.html")
