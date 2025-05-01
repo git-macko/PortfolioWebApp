@@ -23,7 +23,7 @@ def sign_up():
         if len(email) < 4:
             flash('Email must contain an' + ' @ ' + 'and atleast 4 characters', category='error')
         elif len(firstName) < 2:
-            flash('First name must be normal 1 character', category='error')
+            flash('First name must be more than 1 character', category='error')
         elif password1 != cpassword:
             flash('Password must match its confirmation', category='error')
         elif len(password1) < 6:
